@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+
+    <title>Stairpeggio</title>	
+    <link href="css/main.css" rel="stylesheet">
+    <link href="css/index.css" rel="stylesheet">
+
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+
+    <link rel="shortcut icon" type="image/png" href="images/StairpeggioFavicon.png">
+	<script type="text/javascript" src="js/sound-mouseover.js"></script>
+  </head>
+  <body id="homepage">
+
+    <div id="wrapper">
+      <div id="masthead">
+
+        <div id="masthead-logo" class="masthead-item">
+          <a id="logo" href="index.html">
+            <img id="logo-img" src="images/StairpeggioLogo.png">
+          </a>
+        </div>
+
+        <div id="nav-wrapper">
+
+          <nav id="navigation" class="masthead-item">
+            
+            <ul>
+              
+              <a href="team.html">
+                <li>Team</li>
+              </a>
+
+              <a href="finances.html">
+                <li>Finances</li>
+              </a>
+              
+              <a href="subsystems.html"><li>Subsystems
+                <ul>
+                  <li>Mechanical</li>
+                  <li>Electrical</li>
+                  <li>Software</li>
+                </ul>
+              </li></a>
+			  
+              <a href="demo.html"><li>Demo</li></a>
+            </ul>
+            
+          </nav>
+
+        </div>
+
+      </div>
+      
+      <div id="main-header">
+        <img id="main-header-img" src="images/OlinBW.jpg">
+        <div id="header-title-frame">
+          <div id="header-title-text-area">
+            <h1>The Subsystems</h1>
+            <h2><font color="white"><a href="#mechanical" class="title"><u>Mechanical</u></a>
+			| <a href="#electrical" class="title"><u>Electrical</u></a>
+			| <a href="#software" class="title"><u>Software</u></a></font></h2>
+          </div>
+        </div>
+      </div>
+
+      <div id="content-area">
+		
+		<section>
+          <div class="article">
+            <div class="article-text">
+              <h3>The three components</h3>
+              <div class="edge">
+                <p>Stairpeggio has three components: a mechanical component, an electrical component, and a software component. 
+				<br>All three work together in harmony to create a piano staircase that is interactive and has excellent sound 
+				quality<a name="mechanical">.</a></p>
+              </span>
+            </div>
+          </div>
+        </section>
+		
+        <section>
+          <div class="article">
+			<div class="article-text">
+			  <h3>Mechanical component</h3>
+			  <div class="edge">
+                <p><b>In Stairpeggio, we choose to use solenoids for our striking mechanism.</b>
+				<br><br>
+				A <b>solenoid</b> is a coil wound into a tightly packed helix, which produces a uniform magnetic field
+				when an electric current is passed through it. If a magnet is placed in the middle of the solenoid, 
+				the magnetic field causes the magnet to shoot up, thus converting energy into linear motion.
+				<br><br>
+				We chose to wind our own solenoids both to optimize sound quality and to save money. Each one is made 
+				of ~400 coils of copper wire around a plastic tube. A 1/4-inch diameter, cylindrical magnet sits 
+				perfectly in the plastic tube, and the metal washer glued onto it strikes the key, producing a beautifully
+				clear sound. The 8 solenoids hit the 8 glockenspiel keys in the F-major octave.
+				<br><br><img src="images/3solenoids.png"></p>
+			  </div>
+			</div>
+		  </div>
+		</section>
+		
+		<section>
+          <div class="article">
+			<div class="article-text">
+			  <h3>Mechanical design</h3>
+			  <div class="edge">
+                <p><img src="images/mechdesign.png" alt="box CAD design"><br><br>
+				<b>One of our design goals was to have each box be as small as possible for greater mobility.</b>
+				For this to be possible, each box's core components consist of just one IR sensor, one solenoid, 
+				and one glockenspiel key. The key sits on (is screwed into) the top of the box with the solenoid 
+				placed underneath it, and the IR sensor fits snugly into a hole in the front of the box.
+				<br><br>
+				The Arduino Mega board, which contains the code to control all 8 boxes, sits in a box at the end, 
+				and slits on the side of the box allow ribbon wire to connect the boxes to the Arduino.
+				<br><br>
+				We later added lights to each box and taped them to the side of each key<a name="electrical">.</a></p>
+			  </div>
+			</div>
+		  </div>
+		</section>
+		
+		<section>
+          <div class="article">
+			<div class="article-text">
+			  <h3>Electrical component</h3>
+			  <div class="edge">
+                <p>One major challenge we faced was that the solenoids we created took in around 10V, but the Arduino only gave out 5V. 
+				That left us with the problem of determining how to control our solenoids with our Arduino. <b>Ultimately, we decided to 
+				use two separate power sources (a 12V source and our 5V Arduino), and use transistors to switch on and off each of 
+				the solenoids.</b>
+				<br><br>
+				Since the solenoids we designed required 10V and drew a current of 1.2A, that helped us specify which components were 
+				necessary for the circuit. We designed our switch with a set of two transistors. By giving our first transistor 
+				a signal, we were able to pass current to the second transistor which powered the solenoid.
+				<br><br>
+				To drop the voltage for the first transistor, we used a 1kΩ resistor to prevent the first transistor from 
+				overheating. We also used a diode in parallel with the solenoid to prevent any excess current from travelling back 
+				through the circuit. In each box, we had one circuit of the same design; thus, in total, we had eight connected circuits.
+				<br><br></p>
+				<p class="center"><img src="images/circuit_diagram_new.JPG" width="500px"></p>
+				<p><br>
+				In keeping with our minimalistic design, <b>we chose to use perfboards instead of breadboards to save space.</b>
+				We soldered everything for each box onto each perfboard, including lights, MOSFETs, a solenoid, and an IR sensor.
+				<br><br>
+				<img src="images/perfboard.jpg" width="900px">
+				<br><br>
+				Here is a diagram of our ribbon wire:
+				<br>
+				</p>
+				<p class="center"><img src="images/wiregram.png"></p>
+				<p>Since the first box contains the Arduino, the components in the first box connect directly to the Arduino
+				without going through the ribbon wire<a name="software">.</a></p>
+			  </div>
+			</div>
+		  </div>
+		</section>
+		
+		<section>
+          <div class="article">
+            <div class="article-text">
+              <h3>Software component</h3>
+              <div class="edge">
+				<p class="center"><img src="images/stairpeggio-code-info.png" alt="How Stairpeggio works: an infographic"></p>
+				<p><br><br><b>Stairpeggio essentially has two functioning modes: a default mode and a tutorial mode.</b>
+				<br><br>
+                In the <b>default mode</b>, an IR sensor in each box reads the distance in front of it (normally, the wall). 
+				If someone steps on the stair, their foot steps between the box and the wall, and the IR sensor detects 
+				a change in the distance. The code then turns on the lights and solenoid in the box, and the solenoid's magnet
+				strikes the glockenspiel key.
+				<br><br>
+				In the <b>tutorial mode</b>, Stairpeggio guides the user to play a song, which we have set to be the pentatonic scale. 
+				The song's notes are arranged into an array, and a counter <font face="serif"><b><i>i</i></b></font> keeps track of 
+				the index in the song. It then turns on the lights in the <font face="serif"><b><i>i <sup>th</sup></i></b></font> box 
+				until someone steps on the stair, at which point the solenoid hits the key, turns off the light, and increments 
+				<font face="serif"><b><i>i</i></b></font> so that the next box's lights turn on. At the end of the tutorial, 
+				it switches back to the default mode, and all 8 lights blink once in unison.
+				<br><br>
+				A pentatonic scale:
+				<br>
+				<img src="http://upload.wikimedia.org/wikipedia/commons/f/f6/C_major_pentatonic_scale.PNG" width="50%">
+				<br><br>
+				(There is also a <b>calibration mode</b> in which the base distances are set to the wall in front of the boxes.)
+				<br><br>
+				A button switches between the three modes.
+				<br><br>
+				The Arduino code can be found <a href="https://github.com/sunnyyy/stairpeggio/blob/master/stairpeggio_final.ino" class="intext">here</a> on Github.
+				</p>
+				<p class="center">
+				<br><br>A visual representation of the <b>default mode</b> (mouse over for effect!)<br><br>
+				<a onmouseover="playclip1();">
+					<img src="images/stair1.gif" onmouseover="this.src='images/st-1blue.gif'" onmouseout="this.src='images/stair1.gif'"/>
+				</a>
+				<a onmouseover="playclip2();">
+					<img src="images/stair2.gif" onmouseover="this.src='images/st-2green.gif'" onmouseout="this.src='images/stair2.gif'"/>
+				</a>
+				<a onmouseover="playclip3();">
+					<img src="images/stair3.gif" onmouseover="this.src='images/st-3white.gif'" onmouseout="this.src='images/stair3.gif'"/>
+				</a>
+				<a onmouseover="playclip4();">
+					<img src="images/stair4.gif" onmouseover="this.src='images/st-4red.gif'" onmouseout="this.src='images/stair4.gif'"/>
+				</a>
+				<a onmouseover="playclip5();">
+					<img src="images/stair5.gif" onmouseover="this.src='images/st-5blue.gif'" onmouseout="this.src='images/stair5.gif'"/>
+				</a>
+				<a onmouseover="playclip6();">
+					<img src="images/stair6.gif" onmouseover="this.src='images/st-6green.gif'" onmouseout="this.src='images/stair6.gif'"/>
+				</a>
+				<a onmouseover="playclip7();">
+					<img src="images/stair7.gif" onmouseover="this.src='images/st-7white.gif'" onmouseout="this.src='images/stair7.gif'"/>
+				</a>
+				<a onmouseover="playclip8();">
+					<img src="images/stair8.gif" onmouseover="this.src='images/st-8red.gif'" onmouseout="this.src='images/stair8.gif'"/>
+				</a>
+				</p>
+				<p class="center">
+				<br><br>A visual representation of the <b>tutorial mode</b> (mouse over for effect!)<br><br>
+				<a onmouseover="playclip9();">
+					<img src="images/tutorial-blank.gif" onmouseover="this.src='images/tutorial-anim.gif'" onmouseout="this.src='images/tutorial-blank.gif'"/>
+				</a>
+			  </div>
+			  </span>
+            </div>
+		  </div>
+		</section>
+
+        
+
+      </div> <!-- content-area -->
+
+      
+    </div> <!-- wrapper -->
+
+    
+    <footer>
+      <div id="footer-text">
+        <img id="footer-logo" src="images/Olin_Identifier_Standard_Black.png">
+      </div>
+      
+    </footer>
+
+	<audio id="soundClip1"><source src="sounds/1f.mp3"></source></audio>
+	<audio id="soundClip2"><source src="sounds/2g.mp3"></source></audio>
+	<audio id="soundClip3"><source src="sounds/3a.mp3"></source></audio>
+	<audio id="soundClip4"><source src="sounds/4b.mp3"></source></audio>
+	<audio id="soundClip5"><source src="sounds/5c.mp3"></source></audio>
+	<audio id="soundClip6"><source src="sounds/6d.mp3"></source></audio>
+	<audio id="soundClip7"><source src="sounds/7e.mp3"></source></audio>
+	<audio id="soundClip8"><source src="sounds/8f.mp3"></source></audio>
+	<audio id="soundClipPenta"><source src="sounds/penta.mp3"></source></audio>
+	<div id="sounddiv"><bgsound id="sound"></div>
+	
+    <script src="js/jquery-1.11.1.js"></script>
+
+    <script src="js/index.js"></script>
+  </body>
+</html>

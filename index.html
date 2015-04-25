@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+
+    <title>Stairpeggio</title>
+    <link href="css/main.css" rel="stylesheet">
+    <link href="css/index.css" rel="stylesheet">
+
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+
+    <link rel="shortcut icon" type="image/png" href="images/StairpeggioFavicon.png">
+	<script type="text/javascript" src="js/sound-mouseover.js"></script>
+  </head>
+  <body id="homepage">
+
+    <div id="wrapper">
+      <div id="masthead">
+
+        <div id="masthead-logo" class="masthead-item">
+          <a id="logo" href="index.html">
+            <img id="logo-img" src="images/StairpeggioLogo.png">
+          </a>
+        </div>
+
+        <div id="nav-wrapper">
+
+          <nav id="navigation" class="masthead-item">
+            
+            <ul>
+              
+              <a href="team.html">
+                <li>Team</li>
+              </a>
+
+              <a href="finances.html">
+                <li>Finances</li>
+              </a>
+              
+              <a href="subsystems.html"><li>Subsystems
+                <ul>
+                  <li>Mechanical</li>
+                  <li>Electrical</li>
+                  <li>Software</li>
+                </ul>
+              </li></a>
+              <a href="demo.html"><li>Demo</li></a>
+          
+            </ul>
+            
+          </nav>
+
+        </div>
+
+      </div>
+      
+      <div id="main-header">
+        <img id="main-header-img" src="images/OlinBW.jpg">
+        <div id="header-title-frame">
+          <div id="header-title-text-area">
+            <h1>Reliable, Beautiful, & Interactive</h1>
+            <h2>A piano staircase at Olin College</h2>
+          </div>
+        </div>
+      </div>
+
+      <div id="content-area">
+        
+		
+		<section>
+          <div class="article">
+            
+            <div class="article-text">
+              <h3>Project Goal</h3>
+              <div class="edge">
+                <p>For the final project for the Principles of Engineering class at Olin,
+				<b>create a mobile interactive piano staircase with $250</b>.</p>
+				<p class="center"><br>
+					<img src="images/st-1blue.gif">
+					<img src="images/st-2green.gif">
+					<img src="images/st-3white.gif">
+					<img src="images/st-4red.gif">
+					<img src="images/st-5blue.gif">
+					<img src="images/st-6green.gif">
+					<img src="images/st-7white.gif">
+					<img src="images/st-8red.gif">
+				</p>
+              </span>
+            </div>
+
+          </div>
+        </section>
+
+        <section>
+          <div class="subarticle-wrapper">
+            
+            <div class="subarticle">
+              <h3>Overarching Goals</h3>
+              <div class="edge">
+			    <p>We wanted Stairpeggio to be</p>
+				<ul>
+				  <li>reliable,</li>
+				  <li>mobile,</li>
+				  <li>robust,</li>
+				  <li>recreatable,</li>
+				  <li>interactive,</li>
+				  <li>and have good sound quality.</li>
+				</ul>
+              </div>
+            </div>
+
+            <div class="subarticle">
+              <h3>Minimum Deliverables</h3>
+              <div class="edge">
+                <p>At minimum we wanted to make a series of 8 boxes (for the 8 notes in an octave), each containing</p>
+                <ul>
+                  <li>1 infra-red sensor</li>
+                  <li>1 solenoid</li>
+                  <li>1 glockenspiel key, and</li>
+                  <li>1 protoboard.</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="subarticle">
+              <h3>Stretch Deliverables</h3>
+              <div class="edge">
+			    <p>If given the time and remaining budget, we also wanted to include</p>
+				<ul>
+                  <li>lights for each box that lit up when the note is played, and</li>
+                  <li>a "tutorial mode" in which the lights guide the user to play a specific song.</li>
+                </ul>
+              </div>
+            </div>
+          </div><!--end 3 column-->
+        </section>
+		
+		<section>
+          <div class="article">
+			<p class="center">
+				<!--<a onmouseover="playclip1();">
+					<img src="images/stair1.gif" onmouseover="this.src='images/st-1blue.gif'" onmouseout="this.src='images/stair1.gif'"/>
+				</a>
+				<a onmouseover="playclip2();">
+					<img src="images/stair2.gif" onmouseover="this.src='images/st-2green.gif'" onmouseout="this.src='images/stair2.gif'"/>
+				</a>
+				<a onmouseover="playclip3();">
+					<img src="images/stair3.gif" onmouseover="this.src='images/st-3white.gif'" onmouseout="this.src='images/stair3.gif'"/>
+				</a>
+				<a onmouseover="playclip4();">
+					<img src="images/stair4.gif" onmouseover="this.src='images/st-4red.gif'" onmouseout="this.src='images/stair4.gif'"/>
+				</a>
+				<a onmouseover="playclip5();">
+					<img src="images/stair5.gif" onmouseover="this.src='images/st-5blue.gif'" onmouseout="this.src='images/stair5.gif'"/>
+				</a>
+				<a onmouseover="playclip6();">
+					<img src="images/stair6.gif" onmouseover="this.src='images/st-6green.gif'" onmouseout="this.src='images/stair6.gif'"/>
+				</a>
+				<a onmouseover="playclip7();">
+					<img src="images/stair7.gif" onmouseover="this.src='images/st-7white.gif'" onmouseout="this.src='images/stair7.gif'"/>
+				</a>
+				<a onmouseover="playclip8();">
+					<img src="images/stair8.gif" onmouseover="this.src='images/st-8red.gif'" onmouseout="this.src='images/stair8.gif'"/>
+				</a>
+				<br>
+				<img src="images/stair1.gif" onmouseover="this.src='images/st-1blue.gif'" onmouseout="this.src='images/stair1.gif'"/>
+				<img src="images/stair2.gif" onmouseover="this.src='images/st-2green.gif'" onmouseout="this.src='images/stair2.gif'"/>
+				<img src="images/stair3.gif" onmouseover="this.src='images/st-3white.gif'" onmouseout="this.src='images/stair3.gif'"/>
+				<img src="images/stair4.gif" onmouseover="this.src='images/st-4red.gif'" onmouseout="this.src='images/stair4.gif'"/>
+				<img src="images/stair5.gif" onmouseover="this.src='images/st-5blue.gif'" onmouseout="this.src='images/stair5.gif'"/>
+				<img src="images/stair6.gif" onmouseover="this.src='images/st-6green.gif'" onmouseout="this.src='images/stair6.gif'"/>
+				<img src="images/stair7.gif" onmouseover="this.src='images/st-7white.gif'" onmouseout="this.src='images/stair7.gif'"/>
+				<img src="images/stair8.gif" onmouseover="this.src='images/st-8red.gif'" onmouseout="this.src='images/stair8.gif'"/>
+				<br><br>
+				<img src="images/tutorial.gif">-->
+			</p>
+          </div>
+        </section>
+		
+		<section>
+          <div class="article">
+            
+            <div class="article-text">
+              <h3>Special thanks</h3>
+              <div class="edge">
+                <p>A big shoutout to Wendy Chin, Sam Chin's mom, for mailing us the glockenspiel keys.</p>
+              </div>
+            </div>
+
+          </div>
+        </section>
+
+      </div> <!-- content-area -->
+
+      
+    </div> <!-- wrapper -->
+
+    
+    <footer>
+      <div id="footer-text">
+        <img id="footer-logo" src="images/Olin_Identifier_Standard_Black.png">
+      </div>
+      
+    </footer>
+
+	
+	<audio id="soundClip1"><source src="sounds/one.mp3"></source></audio>
+	<audio id="soundClip2"><source src="sounds/two.mp3"></source></audio>
+	<audio id="soundClip3"><source src="sounds/three.mp3"></source></audio>
+	<audio id="soundClip4"><source src="sounds/four.mp3"></source></audio>
+	<audio id="soundClip5"><source src="sounds/five.mp3"></source></audio>
+	<audio id="soundClip6"><source src="sounds/six.mp3"></source></audio>
+	<audio id="soundClip7"><source src="sounds/seven.mp3"></source></audio>
+	<audio id="soundClip8"><source src="sounds/eight.mp3"></source></audio>
+	<div id="sounddiv"><bgsound id="sound"></div>
+	
+    <script src="js/jquery-1.11.1.js"></script>
+
+    <script src="js/index.js"></script>
+  </body>
+</html>

@@ -1,0 +1,146 @@
+/* CSS FILE FOR TEAM PAGE SPECIFIC CONTENT */
+
+/* Large picture at the top of the page */
+#main-header{
+	width: 100%;
+	height:auto;
+	margin:none;
+	padding:none;
+}
+#main-header-img{
+	width:100%;
+	margin:none;
+	padding:none;
+	display: block;
+}
+#header-title-frame{
+	position:absolute;
+	top:300px;
+	width:100%;
+	height:50px;
+}
+#header-title-text-area{
+	color:#ffffff;
+	position: relative;
+	font-size: 20pt;
+}
+#header-title-text-area h1{
+	color:#fff;
+	width:100%;
+	text-align: center;
+	margin:0px;
+}
+#header-title-text-area h2{
+	color:#fff;
+	text-align: center;
+	font-size: 16pt;
+	margin:0px;
+}
+
+/* Major text sections */
+section{
+	height:auto;
+	margin:0px;
+	margin-bottom:10px;
+	width:95%;
+	max-width:1000px;
+	margin-left: auto;
+  margin-right: auto;
+  margin-top: 10px;
+}
+#content-area{
+	margin:none;
+	padding:none;
+	background-size: 100% auto;
+	background-position:0px 100px;
+	background-attachment:fixed;
+}
+#wrapper{
+	background-color:#ffffff;
+	margin:0px;
+}
+
+
+
+
+
+.profile-article{
+	position:relative;
+	width:100%;
+	height:auto;
+	margin-left: auto;
+    margin-right: auto;
+    background-color:transparent;
+    overflow:auto;
+  padding-bottom:20px;
+  padding-top:20px;
+  border-style: solid;
+  border-width: 0 0 2px 0;
+  border-color: #e0e0e0;
+}
+.profile-article-image{
+	float:left;
+	width:286px;
+	min-height: 400px;
+	height:100%;
+	margin:0px;
+	padding:0px;
+	clear:none;
+	overflow:hidden;
+}
+.profile-article-image:after{
+	height:100%;
+}
+.profile-article-image > img{
+	position:relative;
+	display:block;
+	width:auto;
+	height:100%;
+	margin:0px;
+	padding:0px;
+}
+.profile-article-text{
+	float:left;
+	clear:none;
+	padding:40px;
+	height:320px;
+	width:calc(60% - 80px);
+	max-width:620px;
+}
+
+.center {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}
+h3{
+	font-size:16pt;
+	color:#2196f3;
+	margin:0;
+	padding:0;
+	
+}
+h4{
+	font-size:12pt;
+	color:#a2a2a2;
+	margin:0;
+	padding:0;
+	
+}
+p{
+	margin:0;
+	padding:0;
+	padding-left:20px;
+
+	font-size:12pt;
+	color:#000;
+}
+
+/* That nice blue edge */
+.edge{
+	border-style: solid;
+	border-color: #2196f3;
+  border-width:  0 0 0 5px;
+  padding:10px 0 10px 0;
+  margin:10px 0 10px 0;
+}
